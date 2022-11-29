@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Temperature Converter</title>
+	</head>
+	<body>
+		<main>
+			<form>
+				<h1>Temperature Converter</h1>
+				<div class="container">
+					<div class="form-input">
+						<label for="degree">Degree</label>
+						<input type="text" id="degree" name="degree" required />
+					</div>
+					<div class="form-input">
+						<label for="type">Type</label>
+						<select id="type" name="type" required>
+							<option selected disabled>Select Temperature Type</option>
+							<option value="fahrenheit">Fahrenheit</option>
+							<option value="celsius">Celsius</option>
+						</select>
+					</div>
+				</div>
+				<div>
+					<p id="result"></p>
+				</div>
+				<button id="btn" class="btn">Convert</button>
+			</form>
+		</main>
+		<script>
+			const btn = document.getElementById("btn");
+			const degrees = document.getElementById("degree");
+			const state = document.getElementById("type");
+			let result = document.getElementById("result");
+
+			btn.addEventListener("click", (e) => {
+				e.preventDefault();
+				if (!degrees.value) {
+					result.innerHTML = "Please enter the degrees value (as a number)!!!";
+				} else if (state.value == "fahrenheit" && degrees.value != "") {
+					result.innerHTML = `Result: ${
+						(parseFloat(degrees.value) * 9) / 5 + 32
+					} °F`;
+				} else if (state.value == "celsius" && degrees.value != "") {
+					result.innerHTML = `${((parseFloat(degrees.value) - 32) * 5) / 9} °C`;
+				}
+			});
+		</script>
+	</body>
+</html>
