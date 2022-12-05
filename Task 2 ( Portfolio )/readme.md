@@ -1,2 +1,2 @@
-
-<a href="https://veenit9560-animated-carnival-6wrjp5p795p345jx-5500.preview.app.github.dev/Task%202%20(%20Portfolio%20)/"> Portfolio </a>
+# Task 2 ( Portfolio )
+<a href="https://monumental-babka-ec12e6.netlify.app/"> Portfolio </a>
